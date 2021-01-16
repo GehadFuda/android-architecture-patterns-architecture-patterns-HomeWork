@@ -17,6 +17,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -30,10 +39,8 @@ dependencies {
     implementation 'com.jakewharton:butterknife:10.2.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
 
-    def lifecycle_version = "2.2.0"
+    def lifecycle_version = "2.1.0"
 
-    // ViewModel
-    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
-    // LiveData
-    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+    // ViewModel and LiveData
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
 }
